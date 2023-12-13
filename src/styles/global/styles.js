@@ -42,6 +42,7 @@ button:hover, a:hover{
   filter: brightness(0.8);
 }
 
+/* Screen Reader */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -53,5 +54,49 @@ button:hover, a:hover{
   white-space: nowrap;
   border-width: 0;
 }
+
+/* Alerts Styles */
+
+// General Alert Styles
+.alerts{
+  font-family: ${({ theme }) => theme.FONT.FAMILY['ROBOTO']} !important;
+}
+
+.alerts__title{
+  font-size: ${({ theme }) => theme.FONT.SIZE['XLG']};
+}
+
+.alerts__confirm-button{
+  font-size: ${({ theme }) => theme.FONT.SIZE['MD']};
+}
+
+// Comum Alert
+.alert__container{}
+
+.alert__title{}
+
+.alert__text{}
+
+.alert__confirm-button{}
+
+//Error Alert
+.error__container{}
+
+.error__title{}
+
+.error__text{}
+
+.error__confirm-button{}
+
+//Confirm Alert
+.confirm__container{}
+
+.confirm__title{}
+
+.confirm__text{}
+
+.confirm__confirm-button{}
+
+.confirm__cancel-button{}
 
 `
