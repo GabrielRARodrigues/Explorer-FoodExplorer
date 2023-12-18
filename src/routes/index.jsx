@@ -11,7 +11,7 @@ import { UserRoutes } from './user.routes'
 import { AdminRoutes } from './admin.routes'
 
 export function Routes() {
-  const { user } = useAuth()
+  const { user, signOut } = useAuth()
 
   useEffect(() => {
     api.get('users/validation').catch(error => {

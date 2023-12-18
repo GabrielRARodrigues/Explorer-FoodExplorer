@@ -16,7 +16,7 @@ function AuthProvider({ children }) {
 
     try {
       const response = await api.post('sessions', userData)
-      const { user } = response.data
+      const user = response.data
 
       localStorage.setItem('@foodexplorer:user', JSON.stringify(user))
 
