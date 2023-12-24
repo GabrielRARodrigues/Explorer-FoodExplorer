@@ -27,6 +27,11 @@ export const Container = styled.div`
     border: 0;
     border-radius: 8px;
 
+    svg {
+      font-size: ${({ theme }) => theme.FONT.SIZE['XLG']};
+      color: ${({ theme }) => theme.COLORS.LIGHT[400]};
+    }
+
     input {
       width: 100%;
       max-width: 30rem;

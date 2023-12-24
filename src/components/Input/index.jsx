@@ -27,7 +27,13 @@ export function Input({
 
   return (
     <Container $inputAlign={inputAlign}>
-      <label htmlFor={id}>{label}</label>
+      {label ? (
+        <label htmlFor={id}>{label}</label>
+      ) : (
+        <label htmlFor={id} className="sr-only">
+          {placeholder}
+        </label>
+      )}
       <div>
         {Icon && <Icon />}
         <InputMask

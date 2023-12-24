@@ -56,8 +56,10 @@ export default {
       XSM: '1.2rem'
     },
     WEIGHT: {
+      LIGHT: 300,
       REGULAR: 400,
       MEDIUM: 500,
+      SEMIBOLD: 600,
       BOLD: 700
     },
     HEIGHT: {

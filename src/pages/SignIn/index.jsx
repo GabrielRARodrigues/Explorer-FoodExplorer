@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
-import { Container, Content, Form } from './styles.js'
+import { Container, Content, Form } from './styles'
 
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
@@ -10,12 +10,9 @@ import { Logo } from '../../components/Logo'
 
 import { useAuth } from '../../hooks/useAuth'
 
-import { Error } from '../../utils/alerts/index.js'
+import { Error } from '../../utils/alerts'
 
-import {
-  emailRegex,
-  passwordRegex
-} from '../../utils/validations/regex/form.js'
+import { emailRegex, passwordRegex } from '../../utils/validations/regex/form'
 
 export function SignIn() {
   const [email, setEmail] = useState('')

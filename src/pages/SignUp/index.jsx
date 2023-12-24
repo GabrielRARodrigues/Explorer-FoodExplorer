@@ -8,15 +8,11 @@ import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 import { Logo } from '../../components/Logo'
 
-import { api } from '../../services/api.js'
+import { api } from '../../services/api'
 
-import { Error, Alert } from '../../utils/alerts/index.js'
+import { Error, Alert } from '../../utils/alerts'
 
-import {
-  emailRegex,
-  passwordRegex
-} from '../../utils/validations/regex/form.js'
-
+import { emailRegex, passwordRegex } from '../../utils/validations/regex/form'
 
 export function SignUp() {
   const [name, setName] = useState('')

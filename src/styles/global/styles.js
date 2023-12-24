@@ -13,6 +13,8 @@ export const Styles = createGlobalStyle`
 
 body {
   background-color: ${({ theme }) => theme.COLORS.DARK[400]} ;
+
+  overflow-x: hidden;
 }
 
 body, input, button, textarea{
@@ -61,14 +63,18 @@ button:hover, a:hover{
   width: 100%;
   max-width: 36rem;
 
-  @media screen and (max-width:${DEVICE_BREAKPOINTS.LG}){
-  max-width: 40rem;
+  @media screen and (min-width:${DEVICE_BREAKPOINTS.MD}){
+    max-width: 42rem;
   }
 }
 
 .alerts__title{
-  font-size: ${({ theme }) => theme.FONT.SIZE['XLG']};
+  font-size: ${({ theme }) => theme.FONT.SIZE['XG']};
   color: ${({ theme }) => theme.COLORS.LIGHT[100]};
+
+  @media screen and (min-width:${DEVICE_BREAKPOINTS.MD}){
+    font-size: ${({ theme }) => theme.FONT.SIZE['XLG']};
+  }
 }
 
 .alerts__confirm-button{
@@ -133,5 +139,43 @@ button:hover, a:hover{
   }
 }
 
+/* Swipper
+
+.swiper {
+  width: 100%; 
+}
+
+.swiper-wrapper {
+  max-height: 100%;
+  height: 100%;
+  display: flex;
+}
+.swiper-slide {
+  width: auto;
+  flex-shrink: 0;
+  display: block;
+  height: 100%;
+  max-height: 100%;
+}
+
+.swiper-container {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100vh;
+  // CSS Grid/Flexbox bug size workaround
+  // @see https://github.com/kenwheeler/slick/issues/982
+  // @see https://github.com/nolimits4web/swiper/issues/3599
+  min-height: 0;
+  min-width: 0;
+}
+
+
+.swiper-slide  {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+*/
 
 `
