@@ -78,7 +78,7 @@ export function Home() {
           <section>
             <h2>Bebidas</h2>
             <SwiperDishes
-              dishes={dishes.filter(dish => dish.category === 'Bebidas')}
+              dishes={dishes.filter(dish => dish.category === 'Bebida')}
               setRequests={setRequests}
             />
           </section>

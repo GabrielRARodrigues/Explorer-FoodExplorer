@@ -59,7 +59,13 @@ export function Dish({
       <div>
         <img src={dishImageUrl} alt={`${description ? description : name}`} />
         <Link to={`/dishes/details/${id}`}>{`${name} >`}</Link>
-        <p>{description.substr(0, 65)}.</p>
+        {description && (
+          <p>
+            {description.length > 65
+              ? description.substr(0, 65) + '...'
+              : description}
+          </p>
+        )}
         <h3>{`R$ ${price.replace('.', ',')}`}</h3>
         {!isAdmin && (
           <Actions>

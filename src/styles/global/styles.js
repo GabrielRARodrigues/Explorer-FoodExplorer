@@ -61,10 +61,10 @@ button:hover, a:hover{
   background-color: ${({ theme }) => theme.COLORS.DARK[800]};
 
   width: 100%;
-  max-width: 36rem;
+  max-width: 38rem;
 
   @media screen and (min-width:${DEVICE_BREAKPOINTS.MD}){
-    max-width: 42rem;
+    max-width: 48rem;
   }
 }
 
@@ -77,12 +77,21 @@ button:hover, a:hover{
   }
 }
 
+.alerts__buttons-container{
+  width: 100%;
+  padding-inline: 1rem;
+}
+
 .alerts__confirm-button{
   font-size: ${({ theme }) => theme.FONT.SIZE['SM']}!important;
 
   @media screen and (max-width:${DEVICE_BREAKPOINTS.LG}){
     font-size: ${({ theme }) => theme.FONT.SIZE['MD']}!important;
   }
+
+}
+
+.alerts__cancel-button{
 }
 
 // Comum Alert
@@ -95,6 +104,8 @@ button:hover, a:hover{
 }
 
 .alert__text{}
+
+.alert__buttons-container{}
 
 .alert__confirm-button{
   background-color: ${({ theme }) => theme.COLORS.TINTS.CAKE[200]}!important;
@@ -110,6 +121,8 @@ button:hover, a:hover{
   color: ${({ theme }) => theme.COLORS.LIGHT[100]};
 }
 
+.error__buttons-container{}
+
 .error__text{}
 
 .error__confirm-button{
@@ -123,7 +136,38 @@ button:hover, a:hover{
 
 .confirm__text{
   font-size: ${({ theme }) => theme.FONT.SIZE['MD']}!important;
-  color:  ${({ theme }) => theme.COLORS.LIGHT[300]};
+  color:  ${({ theme }) => theme.COLORS.LIGHT[500]}!important;
+}
+
+.confirm__buttons-container{
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+
+  & > button {
+    padding-inline: 1rem;
+  }
+
+
+  @media screen and (min-width: ${DEVICE_BREAKPOINTS.SM}){
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    
+    & > button{
+      width: 100%;
+      min-width: fit-content;
+    }
+
+  }
+
+  @media screen and (min-width: ${DEVICE_BREAKPOINTS.MD}){
+    & > button {
+      flex: 1;
+    }
+  }
+
 }
 
 .confirm__confirm-button{
@@ -138,8 +182,6 @@ button:hover, a:hover{
     font-size: ${({ theme }) => theme.FONT.SIZE['MD']}!important;
   }
 }
-
-/* Swipper
 
 .swiper {
   width: 100%; 

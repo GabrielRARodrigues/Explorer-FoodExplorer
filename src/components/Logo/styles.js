@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { DEVICE_BREAKPOINTS } from '../../styles/deviceBreakpoints'
 
-export const Container = styled.h1`
+export const Container = styled.h2`
   display: flex;
   justify-content: center;
   align-items: end;

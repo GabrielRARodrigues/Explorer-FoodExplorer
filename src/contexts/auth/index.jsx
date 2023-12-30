@@ -30,10 +30,13 @@ function AuthProvider({ children }) {
     }
   }
 
-  function signOut() {
+  async function signOut() {
     localStorage.removeItem('@foodexplorer:user')
 
     setData({})
+    try {
+      await api.delete('cookies/token')
+    } catch {}
   }
 
   useEffect(() => {

@@ -5,10 +5,11 @@ export function LinkToBack({
   children = 'voltar',
   to = -1,
   isIcon = true,
+  large = false,
   ...rest
 }) {
   return (
-    <Container to={to} {...rest}>
+    <Container to={to} $large={large} {...rest}>
       {isIcon && <PiCaretLeft />}
       {children}
     </Container>

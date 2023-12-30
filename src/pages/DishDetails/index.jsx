@@ -51,13 +51,15 @@ export function DishDetails() {
         setData(response.data)
       } catch (error) {
         if (error.response) {
-          await Error({ title: error.response.data.message })
+          const result = await Error({ title: error.response.data.message })
 
-          return navigate(-1)
+          if (result.isConfirmed || !result.isConfirmed) return navigate(-1)
         } else {
-          await Error({ title: 'Não foi possível buscar o prato.' })
+          const result = await Error({
+            title: 'Não foi possível buscar o prato.'
+          })
 
-          return navigate(-1)
+          if (result.isConfirmed || !result.isConfirmed) return navigate(-1)
         }
       }
     }
@@ -70,7 +72,7 @@ export function DishDetails() {
       <Header requests={requests} />
       <main>
         <Content>
-          <LinkToBack />
+          <LinkToBack large />
           {data && (
             <Dish>
               <img
@@ -79,14 +81,16 @@ export function DishDetails() {
               />
               <DishContent>
                 <h2>{data.name}</h2>
-                <p>{data.description}</p>
-                <Ingredients>
-                  {data.ingredients.map(ingredient => (
-                    <li key={ingredient.id}>
-                      <Ingredient>{ingredient.name}</Ingredient>
-                    </li>
-                  ))}
-                </Ingredients>
+                {data.description && <p>{data.description}</p>}
+                {data.ingredients.length >= 1 && (
+                  <Ingredients>
+                    {data.ingredients.map(ingredient => (
+                      <li key={ingredient.id}>
+                        <Ingredient>{ingredient.name}</Ingredient>
+                      </li>
+                    ))}
+                  </Ingredients>
+                )}
                 <DishActions $isAdmin={isAdmin}>
                   {isAdmin ? (
                     <Button onClick={handleEditDish}>Editar prato</Button>

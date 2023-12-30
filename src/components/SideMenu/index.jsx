@@ -44,6 +44,7 @@ export function SideMenu({
       </Header>
       <div>
         <Input
+          id="search-side"
           icon={PiMagnifyingGlass}
           placeholder="Busque por pratos ou ingredientes"
           onChange={event => {

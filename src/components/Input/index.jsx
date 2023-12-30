@@ -1,14 +1,9 @@
-import { useRef } from 'react'
-
-import InputMask from 'react-input-mask'
-
 import { Container } from './styles'
 
 export function Input({
   icon: Icon,
   label = '',
   type = 'text',
-  mask,
   name,
   value,
   id,
@@ -22,9 +17,6 @@ export function Input({
   inputAlign = 'start',
   ...rest
 }) {
-  const ref = useRef(null)
-  const inputRef = useRef(null)
-
   return (
     <Container $inputAlign={inputAlign}>
       {label ? (
@@ -36,12 +28,9 @@ export function Input({
       )}
       <div>
         {Icon && <Icon />}
-        <InputMask
+        <input
           name={name}
           id={id}
-          ref={ref}
-          inputRef={inputRef}
-          mask={mask}
           value={value}
           type={type}
           placeholder={placeholder}

@@ -60,8 +60,9 @@ export function Header({ requests = 0, setSearch, ...rest }) {
         <button onClick={handleOpenMenu}>
           <PiList />
         </button>
-        <Logo isAdmin={isAdmin} />
+        <Logo isAdmin={isAdmin} isLink />
         <Input
+          id="search-header"
           icon={PiMagnifyingGlass}
           placeholder="Busque por pratos ou ingredientes"
           inputAlign="center"
