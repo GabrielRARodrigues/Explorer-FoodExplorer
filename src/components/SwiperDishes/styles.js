@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { DEVICE_BREAKPOINTS } from '../../styles/deviceBreakpoints'
 
 export const Container = styled.div`
-  max-width: calc(98vw - 24px);
+  width: calc(98vw - 24px);
 
   & > .dishes-slider {
     width: 100%;
@@ -15,6 +15,8 @@ export const Container = styled.div`
     .swiper-button-prev {
       width: 4rem;
       height: 4rem;
+
+      display: none;
 
       top: 40%;
 
@@ -31,6 +33,8 @@ export const Container = styled.div`
       height: 4rem;
       top: 40%;
 
+      display: none;
+
       &::after {
         content: '';
         width: 100%;
@@ -42,6 +46,15 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: ${DEVICE_BREAKPOINTS.LG}) {
-    max-width: calc(98vw - 12.4rem * 2);
+    max-width: 1280px;
+
+    width: calc(98vw - 12.4rem * 2);
+
+    & > .dishes-slider {
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: flex;
+      }
+    }
   }
 `

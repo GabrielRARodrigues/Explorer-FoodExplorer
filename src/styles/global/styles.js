@@ -192,6 +192,7 @@ button:hover, a:hover{
   height: 100%;
   display: flex;
 }
+
 .swiper-slide {
   width: auto;
   flex-shrink: 0;
@@ -204,9 +205,7 @@ button:hover, a:hover{
   width: 100%;
   max-width: 100%;
   max-height: 100vh;
-  // CSS Grid/Flexbox bug size workaround
-  // @see https://github.com/kenwheeler/slick/issues/982
-  // @see https://github.com/nolimits4web/swiper/issues/3599
+
   min-height: 0;
   min-width: 0;
 }
@@ -218,6 +217,6 @@ button:hover, a:hover{
   height: 100%;
   object-fit: cover;
 }
-*/
+
 
 `

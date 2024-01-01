@@ -12,7 +12,12 @@ export function IngredientMarker({
   ...rest
 }) {
   return (
-    <Container $isNew={isNew}>
+    <Container
+      $isNew={isNew}
+      $inputMaxWidth={
+        (value.length > 7 ? value.length * 8.5 : value.length < 6 ? value.length * 10 : value.length * 9) + 'px'
+      }
+    >
       <input
         id={id}
         type="text"

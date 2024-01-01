@@ -40,9 +40,6 @@ export const Container = styled.h2`
   }
 
   @media screen and (min-width: ${DEVICE_BREAKPOINTS.MD}) {
-    flex-direction: column;
-    gap: 0;
-
     font-size: ${({ theme, $large }) =>
       $large ? theme.FONT.SIZE['4XLG'] : theme.FONT.SIZE['XLG']};
 
@@ -59,5 +56,10 @@ export const Container = styled.h2`
         background-position: center;
       }
     }
+  }
+
+  @media screen and (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    flex-direction: column;
+    gap: 0;
   }
 `

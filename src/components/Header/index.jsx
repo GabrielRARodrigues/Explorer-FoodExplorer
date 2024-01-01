@@ -56,7 +56,7 @@ export function Header({ requests = 0, setSearch, ...rest }) {
         isAdmin={isAdmin}
         setSearch={setSearch}
       />
-      <Container {...rest}>
+      <Container $isAdmin={isAdmin} {...rest}>
         <button onClick={handleOpenMenu}>
           <PiList />
         </button>

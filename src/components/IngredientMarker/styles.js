@@ -22,7 +22,8 @@ export const Container = styled.div`
 
   & > input {
     width: 100%;
-    max-width: 6.5rem;
+    max-width: ${({ $inputMaxWidth }) =>
+      $inputMaxWidth !== '0px' ? $inputMaxWidth : '7rem'};
 
     display: flex;
     align-items: center;
@@ -56,12 +57,6 @@ export const Container = styled.div`
       font-size: 1.3rem;
       color: ${({ theme, $isNew }) =>
         $isNew ? theme.COLORS.LIGHT[500] : theme.COLORS.LIGHT[100]};
-    }
-  }
-
-  @media screen and (min-width: ${DEVICE_BREAKPOINTS.SM}) {
-    & > input {
-      max-width: 7.5rem;
     }
   }
 `

@@ -31,11 +31,14 @@ export const Container = styled.header`
   @media screen and (min-width: ${DEVICE_BREAKPOINTS.MD}) {
     padding: 2.4rem 6.4rem;
 
+    flex-wrap: wrap;
     gap: 3.2rem;
 
     & > div {
       display: flex;
       flex: 1;
+      ${({ $isAdmin }) =>
+        $isAdmin ? `width: 100%; flex: auto; order: 1; ` : ''}
     }
 
     button:first-child {
@@ -45,6 +48,13 @@ export const Container = styled.header`
 
   @media screen and (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     padding: 2.4rem 12rem;
+
+    & > div {
+      width: auto;
+
+      flex: 1;
+      order: 0;
+    }
   }
 `
 
@@ -56,6 +66,8 @@ export const Button = styled.button`
 
   background: none;
   border: 0;
+
+  ${({ $isAdmin }) => ($isAdmin ? 'transform: translateX(-50%);' : '')}
 
   & > svg {
     ${({ $isAdmin }) => ($isAdmin ? 'display:none;' : '')}
@@ -117,6 +129,11 @@ export const Button = styled.button`
         ${({ $isAdmin }) => ($isAdmin ? 'content:""' : '')}
       }
     }
+  }
+
+  @media screen and (min-width: ${DEVICE_BREAKPOINTS.LG}){
+  ${({ $isAdmin }) => ($isAdmin ? 'transform: translateX(0%);' : '')}
+    
   }
 `
 

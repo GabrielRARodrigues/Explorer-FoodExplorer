@@ -34,14 +34,24 @@ export function CurrencyInput({
   function handleChange(event) {
     const inputElement = event.target
 
+    if (inputElement.value.length > 4) {
+      if (!inputElement.value.includes(',')) {
+        inputElement.value = inputElement.value.slice(
+          0,
+          inputElement.value.length - 2
+        )
+      }
+    }
     if (
       inputElement.value.search(/,\d\d?/) === -1 &&
       inputElement.value.length > 3
     ) {
-      if (inputElement.value.includes(',')) inputElement.value += '00'
-      else {
+      if (inputElement.value.includes(',')) {
+        inputElement.value += '00'
+      } else {
         inputElement.value += ',00'
       }
+
       inputElement.setSelectionRange(
         inputElement.value.length - 3,
         inputElement.value.length - 3

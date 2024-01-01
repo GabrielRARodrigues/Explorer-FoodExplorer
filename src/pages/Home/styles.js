@@ -149,6 +149,9 @@ export const Content = styled.div`
     gap: 4.8rem;
 
     & > section {
+      max-width: 1280px;
+      margin-inline: auto;
+
       h2 {
         font-family: ${({ theme }) => theme.FONT.FAMILY['POPPINS']};
         font-size: ${({ theme }) => theme.FONT.SIZE['2XLG']};
