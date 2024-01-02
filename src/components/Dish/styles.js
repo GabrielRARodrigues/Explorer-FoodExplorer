@@ -32,6 +32,8 @@ export const Container = styled.div`
   }
 
   & > div {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,7 +69,7 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: ${DEVICE_BREAKPOINTS.LG}) {
-    width: 30.5rem;
+    width: 30.8rem;
     height: 46.3rem;
 
     & > button {
